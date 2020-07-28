@@ -11,7 +11,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 import os
-os.listdir('E:/analytics/projects/pyanalytics/data') #change the folder to see what are the file in folder
+os.listdir('E:/analytics/projects/pyanalytics') #change the folder to see what are the file in folder
 #dataset
 #data = pd.read_csv('E:/analytics/projects/pyanalytics/data/bill_authentication.csv')
 data = pd.read_csv('https://raw.githubusercontent.com/DUanalytics/pyAnalytics/master/data/bill_authentication.csv')
@@ -26,10 +26,11 @@ y
 y.value_counts()
 #split data
 from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=.20)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=.25)
 X_train.shape
 X_test.shape
-275/data.shape[0]
+X_test.shape[0]/data.shape[0]
+
 
 #model
 from sklearn.tree import DecisionTreeClassifier
@@ -39,6 +40,7 @@ clsModel.fit(X_train, y_train)
 #predict
 ypred1 = clsModel.predict(X_test)
 len(ypred1)
+ypred1
 
 #metrics
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
@@ -51,6 +53,13 @@ newData = X.sample(4)
 clsModel.predict(newData)
 
 #visualise 
+
+
+
+
+
+
+
 #pip install graphviz
 from graphviz import Source
 from sklearn import tree
@@ -70,10 +79,6 @@ from subprocess import call
 call(['dot', '-Tpng', 'tree.dot', '-o', 'tree.png', '-Gdpi=600'])
 graph1 = graphviz.Source(dot_data1)  
 graph1 
-
-
-
-
 
 #%% Regression Tree - Predict Petrol Consumption on other parameters
 #Predict Numerical value based on IV
