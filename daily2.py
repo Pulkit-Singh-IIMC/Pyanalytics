@@ -12,6 +12,8 @@ list2 = ['f','c','d','e','f']
 list2
 list2.count('f')
 len(list2)
+dir(list)
+dir(tuple)
 dir(list) #functions which can be operated on list of DS
 sorted(list2)
 
@@ -59,11 +61,10 @@ print(set2)
 str1 = 'Python Programming'
 type(str1)
 print(str1)
-str2="Yash"
+str2="Pulkit"
 str2.lower()
+dict
 dir(str)
-len(str1)
-str1.upper()
 #%% - Sequence
 #sequence - tuple and list are used
 list1
@@ -72,25 +73,15 @@ for i in list1:
     print(i)
   
 for i in list1:    print(i)
-for i in list1:
-    print(i)
-    print(i)
-   
-for i in list2:    print('Pulkit', i + 6)
-list2=[4,6,2,1]
-for i in list2:    print('Pulkit ', i + 6)
-list2[2]
+list3= (1,2,3,4,5,6,7,8)
+for i in list3:    print('Pulkit ', i + 6)
 
-list3=['reddy','ankit','akhil']
-for i in list3:print(i)
-for i in list3:
-    print(i)
 tuple1
 list5 = ['a',1]
 list5
 for i in tuple1:
     print(i)
-for i in range(1, 100, 2):    print(i, end=' ')
+for i in range(1, 100, 1):    print(i, end=' ')
 #odd nos between x & y    
 #%% frozen ( round bracket, comma)
 #frozen set- accepts iterable object as input parameter.
@@ -130,26 +121,18 @@ numpy.array([10,20])
 
 import numpy as np #np is alias
 np1 = np.arange(1,10)
-np1
-list6=[10,20,30,40,50,60]
-list6
-np2 = np.arange(50,100)
-np2
-dir(np)
 x=np.arange(start=1,stop=1000000,step=2)
 len(x)
-x
 x[1:100]
 x[1:50:10]
-x.mean()
 np
 np.mean(np.arange(1,10000000))
 np1
 type(np1)
-np?
+np
 #help on numpy 
 dir(np)  #functions available in numpy
-np.mean?  # help on mean function of numpy
+np.mean  # help on mean function of numpy
 np2 = np.array([ 90, 50, 60, 70 ])
 np2
 np.sort(np2)
@@ -157,20 +140,18 @@ dir(np)
 np3 = np.array([[1,4],[3,1],[5,6],[10,50]])
 np3
 np3.shape
-np2.shape
-x.shape
 #http://cs231n.github.io/python-numpy-tutorial/
 #%%
 #pandas - dataframe, excel like
 #https://mode.com/python-tutorial/pandas-dataframe/
 import pandas as pd
 #https://pandas.pydata.org/pandas-docs/stable/
-pd?
+pd
 dir(pd)
 df1 = pd.DataFrame({'rollno':[1,2,3,4], 'name': [ "Dhiraj", "Kounal", "Akhil", "Pooja" ], 'marks':[ 40, 50, 60.5, 70 ], 'gender':['M', 'M','M', 'F']})
 df1
 type(df1) 
-
+import numpy as np
 df1.columns  #columnanes
 df1.describe() #description of numerical values
 df1.dtypes #data types
@@ -195,7 +176,6 @@ iris = sns.load_dataset("iris")
 iris.head()
 iris.tail()
 df1.groupby('gender').size()
-
 iris.groupby('species').size().plot(kind='bar')
 sns.pairplot(iris)
 
@@ -206,14 +186,14 @@ import statsmodels.api as sm
 #https://vincentarelbundock.github.io/Rdatasets/datasets.html
 mtcars = sm.datasets.get_rdataset(dataname='mtcars', package= 'datasets')
 mtcars.data.head()
-mtcars.data.tail()
+
 #%%
 #Load from Excel/ CSV and export to
 data = mtcars.data
 data.head(6)
 type(data)
 data.to_csv('mtcars.csv')
-data.to_excel('mtcarsExcel1.xlsx','sheet3', header=True)
+data.to_excel('mtcarsExcel.xlsx','sheet3', header=False)
 
 #writing to multiple sheets
 writer = pd.ExcelWriter('test.xlsx', engine='xlsxwriter')
@@ -222,8 +202,6 @@ data.to_excel(writer, sheet_name='sheet1')
 data.to_excel(writer, sheet_name='sheet2')
 # Close the Pandas Excel writer and output the Excel file.
 writer.save()
-mtcars.data.columns
-mtcars.data.rows
 
 #%%
 data.to_excel?
@@ -232,7 +210,7 @@ data2a
 data2a = pd.read_csv('mtcars.csv') #when csv is in project folder
 data2a
 data2b
-data2b = pd.read_csv('E:/analytics/projects/pyanalytics/mtcars.csv')
+data2b = pd.read_csv('E:/pywork/pyprojects/duanalytics/pyanalytics/mtcars.csv')
 data2b
 #csv in any other location - full path
 data2b
