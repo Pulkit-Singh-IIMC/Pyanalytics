@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Aug  6 14:20:23 2020
+Created on Thu Aug  6 15:22:44 2020
 
 @author: pulki
 """
+
 
 #https://acadgild.com/blog/2linear-regression-case-study-2
 #X = number of claims, Y = total payment for all the claims in thousands of Swedish Kronor for geographical zones in Sweden
