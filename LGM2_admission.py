@@ -22,6 +22,7 @@ import matplotlib.pyplot as plt # used to display charts
 
 #data from url
 url = "https://stats.idre.ucla.edu/stat/data/binary.csv"
+import pandas as pd
 df = pd.read_csv(url)
 df
 

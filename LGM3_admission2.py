@@ -87,7 +87,7 @@ np.exp(conf)
 # instead of generating all possible values of GRE and GPA, we're going
 # to use an evenly spaced range of 10 values from the min to the max 
 gres = np.linspace(data['gre'].min(), data['gre'].max(), 10)
-print gres
+print(gres)
 
 
 
