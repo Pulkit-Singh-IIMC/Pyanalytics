@@ -189,19 +189,44 @@ corr  =  data2.corr()
 sns.heatmap(corr,  annot=True) 
 plt.show();
 
-#%%predict  target data2.sample()
-newdata  =  pd.DataFrame({'Alcohol':[12,13],  'Magnesium':[72,100],  'Proline':[300, 1000]})
-newdata
+#%%training vs testing for Random Forest
 
-#X & y data2.head()
-X  =  data2[['Alcohol',  'Magnesium',  'Proline']].values 
+df
+X  =  df.drop(['target'], axis=1).values 
 X
-y  =  data2['target'].values 
+y  =  df['target'].values 
 y
-data2.columns 
+df.columns 
 #train  and  test
 X_train,  X_test,  y_train,  y_test  =  train_test_split(X,  y,  test_size=0.3, random_state=1)
 X_train.shape,  X_test.shape
+print(X_train)
+y_train.shape, y_test.shape
+#%%
+#Random Forest modeling
+
+from sklearn.ensemble import RandomForestClassifier
+
+model=RandomForestClassifier(n_estimators=100)
+model.fit(X_train,y_train)
+
+model.score(X_test,y_test)
+y_predicted=model.predict(X_test)
+y_predicted
+
+from sklearn.metrics import confusion_matrix
+cm=confusion_matrix(y_test, y_predicted)
+cm
+
+df['OD280_OD315'].describe()
+newdata2  =  pd.DataFrame({'Malicacid':[1,5],  'ColorIntensity':[2,7],  'OD280_OD315':[1.7, 3.8]})
+df.columns
+X_test
+newdata=pd.DataFrame({'Alcohol':[12,13],  'Malicacid':[1,4],  'Ash':[1,2],  'AlcalinityOfAsh':[14,23],  'Magnesium':[72,100], 'TotalPhenols':[1,3],  'Flavanoids':[1,4],  'NonflavanoidPhenols':[0.4,0.57],  'Proanthocyanins':[0.4,1.9], 'ColorIntensity':[4,10],  'Hue':[0.8,1.4],  'OD280_OD315':[1,4],  'Proline':[300,1000]})
+
+newdata  =  pd.DataFrame({'Alcohol':[12,13],  'Malicacid':[1.3,4.7],  'Ash':[1.9,2.6],  'AlcalinityOfAsh':[13.9,23.5],  'Magnesium':[72,100],  'TotalPhenols':[1.3,2.9],  'Flavanoids':[0.7,3.9],  'NonflavanoidPhenols':[0.4,0.57],  'Proanthocyanins':[0.4,1.9],  'ColorIntensity':[3.9,9.9],  'Hue':[0.8,1.4],  'OD280_OD315':[1.4,3.6],  'Proline':[300,1000]})
+newdata
+model.predict(newdata)
 
 
 #%%decision  tree  model 
