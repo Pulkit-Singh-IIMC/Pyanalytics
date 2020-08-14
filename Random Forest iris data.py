@@ -31,11 +31,11 @@ plt.show();
 df.plot.hist() 
 plt.show();
 
-df.sepal_length_(cm) .plot.hist() 
+df.plot.hist() 
 plt.show();
 
 #density 
-data2.Alcohol.plot.density() 
+df.plot.density() 
 plt.show();
 
 #correlation  plot 
